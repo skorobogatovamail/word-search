@@ -1,13 +1,3 @@
-let puzzle = [
-  ['a', 'k', 'f', 'o', 'x', 'e', 's'],
-  ['s', 'o', 'a', 'w', 'a', 'h', 'p'],
-  ['i', 't', 'c', 'k', 'e', 't', 'n'],
-  ['o', 't', 's', 'd', 'h', 'o', 'h'],
-  ['s', 'e', 'x', 'g', 's', 't', 'a'],
-  ['u', 'r', 'p', 'i', 'w', 'e', 'u'],
-  ['z', 's', 'b', 'n', 'u', 'i', 'r'],
-];
-
 function searchStraightLineInclude(word, puzzle) {
   // search in usual array and in transposed array
   // 1 concatenate all elements in row / column
@@ -84,11 +74,6 @@ function searchStraightLineInclude(word, puzzle) {
   );
 }
 
-// console.log(searchStraightLineInclude('foxes', puzzle));
-// console.log(searchStraightLineInclude('otters', puzzle));
-// console.log(searchStraightLineInclude('bison', puzzle));
-// console.log(searchStraightLineInclude('cat', puzzle));
-
 function searchSnakingInclude(word, puzzle) {
   // get all indexes of element in matrix
   // console.log(getAllIndexes('f', puzzle));
@@ -130,9 +115,9 @@ function searchSnakingInclude(word, puzzle) {
   // 2 for every letter calculate distance to next letter
   // row1 - row2 < 2 && col1 - col2
   // return coordinates;
-  for (let i = 0; i < letters.length - 1; i += 1) {
-    const curLetter = letters[i];
-    const nextLetter = letters[i + 1];
+  for (let l = 0; l < letters.length - 1; l += 1) {
+    const curLetter = letters[l];
+    const nextLetter = letters[l + 1];
     const curLetterIdxs = coordinates[curLetter];
     const nextLetterIdxs = coordinates[nextLetter];
 
@@ -147,7 +132,7 @@ function searchSnakingInclude(word, puzzle) {
   return true;
 }
 
-console.log(searchSnakingInclude('akotters', puzzle)); // true
-console.log(searchSnakingInclude('weirua', puzzle)); // true
-console.log(searchSnakingInclude('afx', puzzle)); // false
-console.log(searchSnakingInclude('ophp', puzzle)); // false
+module.exports = {
+  searchStraightLineInclude,
+  searchSnakingInclude,
+};

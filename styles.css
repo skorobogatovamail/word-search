@@ -48,10 +48,6 @@ button {
 .puzzle {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  color: #a3ffd6;
-  font-size: 40px;
-  font-weight: 800;
   border: solid 10px #f6f5f2;
   border-radius: 20px;
   padding: 20px;
@@ -62,10 +58,21 @@ button {
 }
 
 .puzzle__letter {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: solid 3px #f6f5f2;
   border-radius: 5px;
   margin: 10px;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
+  color: #a3ffd6;
+  font-size: 20px;
+  font-weight: 600;
+}
+.active {
+  background-color: #41b06e;
+}
+.red {
+  background-color: red;
 }
